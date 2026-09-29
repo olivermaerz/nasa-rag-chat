@@ -1,0 +1,32 @@
+# Environment stuff
+.env
+.env.local
+
+# Mac stuff
+.DS_Store
+
+# Python stuff
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+sunnyvenv/
+
+# IDE stuff
+.vscode/
+.idea/
+
+# Project specific stuff
+rubric.md
+project-overview.md
+instructions.md
+original-readme.md
+fix_ragas.png
+*.zip
+
+# Course corpus
+data_text/
+
+# Generated indexes
+chroma_db/
+chroma_db_*/
