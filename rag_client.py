@@ -6,13 +6,13 @@ from pathlib import Path
 def discover_chroma_backends() -> Dict[str, Dict[str, str]]:
     """Discover available ChromaDB backends in the project directory"""
     backends = {}
-    localdb_dir = Path("localdb")
+    current_dir = Path(".")
 
     # Create list of directories that match specific criteria (directory type and name pattern)
     chroma_dirs = [
-        path for path in localdb_dir.iterdir()
+        path for path in current_dir.iterdir()
         if path.is_dir() and path.name.startswith("chroma_db")
-    ] if localdb_dir.is_dir() else []
+    ]
 
     # Loop through each discovered directory
     for chroma_dir in chroma_dirs:
