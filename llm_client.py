@@ -38,7 +38,12 @@ def generate_response(openai_key: str, user_message: str, context: str,
         "role": "user", "content": user_content})
 
 
-    client = OpenAI(api_key=openai_key)
+    # Check if the open ai key is vocareum or regular openai
+    if openai_key.startswith('voc-'):
+        client = OpenAI(api_key=openai_key, base_url="https://openai.vocareum.com/v1")
+    else:
+        client = OpenAI(api_key=openai_key)
+    # client = OpenAI(api_key=openai_key)
     response = client.chat.completions.create(
         model=model,
         messages=messages

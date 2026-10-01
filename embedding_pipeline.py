@@ -27,6 +27,8 @@ import time
 from datetime import datetime
 import argparse
 from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
+# enable loading of API keys from .env file
+from dotenv import load_dotenv
 
 # Configure logging
 logging.basicConfig(
@@ -61,7 +63,11 @@ class ChromaEmbeddingPipelineTextOnly:
             chunk_overlap: Overlap between chunks
         """
         # Initialize OpenAI client
-        self.openai_client = OpenAI(api_key=openai_api_key)
+        # Check if the open ai key is vocareum or regular openai
+        if openai_api_key.startswith('voc-'):
+            self.openai_client = OpenAI(api_key=openai_api_key, base_url="https://openai.vocareum.com/v1")
+        else:
+            self.openai_client = OpenAI(api_key=openai_api_key)
         # Store configuration parameters
         self.openai_api_key = openai_api_key
         self.chroma_persist_directory = chroma_persist_directory
@@ -525,9 +531,9 @@ class ChromaEmbeddingPipelineTextOnly:
                         embeddings=embeddings
                     )
                     stats['added'] += len(ids)
-                    logger.info(f"Added {len(ids)} documents to collection")
+                    logger.info(f"Added {len(ids)} chunks to collection")
                 except Exception as e:
-                    logger.error(f"Error adding documents to collection: {e}")
+                    logger.error(f"Error adding chunks to collection: {e}")
             
         # Return statistics
         logger.info(f"Stats: {stats}")
@@ -693,7 +699,6 @@ def main():
     """Main function"""
     parser = argparse.ArgumentParser(description='ChromaDB Embedding Pipeline for NASA Data')
     parser.add_argument('--data-path', default='.', help='Path to data directories')
-    parser.add_argument('--openai-key', required=True, help='OpenAI API key')
     parser.add_argument('--chroma-dir', default='./chroma_db_openai', help='ChromaDB persist directory')
     parser.add_argument('--collection-name', default='nasa_space_missions_text', help='Collection name')
     parser.add_argument('--embedding-model', default='text-embedding-3-small', help='OpenAI embedding model')
@@ -705,8 +710,19 @@ def main():
     parser.add_argument('--test-query', help='Test query after processing')
     parser.add_argument('--stats-only', action='store_true', help='Only show collection statistics')
     parser.add_argument('--delete-source', help='Delete all documents from a specific source pattern')
-    
+    # allow api keys from command line or .env file
+    parser.add_argument('--openai-key', help='OpenAI API key')
+    parser.add_argument('--load-keys', action='store_true', help='Load API keys from .env file if not provided')
     args = parser.parse_args()
+
+    # double check api key is provided either from command line or .env file
+    if args.load_keys:
+        load_dotenv()
+        args.openai_key = os.getenv('OPENAI_API_KEY')
+        if not args.openai_key:
+            logger.error("OpenAI API key not found in .env file")         
+    if not args.openai_key:
+        parser.error("OpenAI API key is required. Either pass --openai-key, or use --load-keys with OPENAI_API_KEY in .env ")
     
     # Initialize pipeline
     logger.info("Initializing ChromaDB Embedding Pipeline...")
