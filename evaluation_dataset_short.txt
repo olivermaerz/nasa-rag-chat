@@ -1,0 +1,10 @@
+[
+    {
+        "question": "When was the apollo 11 mission?",
+        "expected_answer": "Apollo 11 launched on July 16, 1969. The mission report records liftoff at 9:32 a.m. Eastern Daylight Time (09:32:00 EDT) from Kennedy Space Center Pad 39A."
+    },
+    {
+        "question": "What disaster happened during the challenger mission?",
+        "expected_answer": "Challenger launched with commander Francis R. (Dick) Scobee, pilot Michael J. Smith, mission specialists Ellison S. Onizuka, Judith A. Resnik, and Ronald E. McNair, and payload specialists Gregory B. Jarvis and S. Christa McAuliffe. About one minute to one and a half minutes after launch there was an apparent explosion, and the vehicle was lost. The commentary says it will not speculate on the specific cause, so the answer should not state that an O-ring failed."
+    }
+]

@@ -8,4 +8,7 @@ Set `OPENAI_API_KEY` in the environment / .env file.
 
 The mission text files are not included in this repo. Copy `data_text/` from the [starter repository](https://github.com/udacity/cd13318-exercises-project/tree/main/Project-NASA-Mission-Intelligence-Starter/data_text) into this directory.
 
-Then index the documents with `python embedding_pipeline.py --openai-key "$OPENAI_API_KEY" --data-path ./data_text` and start the chat with `streamlit run chat.py`.
+Then index the documents with `python embedding_pipeline.py --openai-key "$OPENAI_API_KEY" --data-path ./data_text` and start the chat with `streamlit run chat.py` and it will open in your browser.
+
+To see the Bleu and Rouge scores you need to use the batch mode by uploading a json formatted file with questions and expected answers. There is a sample file `evaluation_dataset.txt` that you can upload via the web interface. 
+

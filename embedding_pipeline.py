@@ -284,6 +284,7 @@ class ChromaEmbeddingPipelineTextOnly:
             model=self.embedding_model
         )
         # Return embedding vector
+        # Add error handling
         return response.data[0].embedding
 
 

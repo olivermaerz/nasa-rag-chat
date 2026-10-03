@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What do astronauts feel during take off?",
+        "expected_answer": "The Apollo 11, Apollo 13, and Challenger documents do not describe what the astronauts felt during takeoff. I cannot answer that from the retrieved context."
+    },
+    {
+        "question": "When was the apollo 11 mission?",
+        "expected_answer": "Apollo 11 launched on July 16, 1969. The mission report records liftoff at 9:32 a.m. Eastern Daylight Time (09:32:00 EDT) from Kennedy Space Center Pad 39A."
+    },
+    {
+        "question": "What is the weather like today?",
+        "expected_answer": "That is not a question about Apollo 11, Apollo 13, or Challenger. Please ask about one of those missions."
+    },
+    {
+        "question": "What missions do you have info about?",
+        "expected_answer": "The collection covers three missions: Apollo 11, Apollo 13, and Challenger (STS-51-L)."
+    },
+    {
+        "question": "Who was on board apollo 11?",
+        "expected_answer": "The Apollo 11 crew was Neil A. Armstrong, Commander; Michael Collins, Command Module Pilot; and Edwin E. Aldrin, Jr., Lunar Module Pilot."
+    },
+    {
+        "question": "Who was on board apollo 13?",
+        "expected_answer": "The Apollo 13 crew was James A. (Jim) Lovell, Jr., commander; John L. (Jack) Swigert, Jr., command module pilot; and Fred W. Haise, Jr., lunar module pilot."
+    },
+    {
+        "question": "When was the apollo 13 mission?",
+        "expected_answer": "Apollo 13 launched on April 11, 1970. The mission commentary records liftoff at 2:13."
+    },
+    {
+        "question": "What disaster happened during the challenger mission?",
+        "expected_answer": "Challenger launched with commander Francis R. (Dick) Scobee, pilot Michael J. Smith, mission specialists Ellison S. Onizuka, Judith A. Resnik, and Ronald E. McNair, and payload specialists Gregory B. Jarvis and S. Christa McAuliffe. About one minute to one and a half minutes after launch there was an apparent explosion, and the vehicle was lost. The commentary says it will not speculate on the specific cause, so the answer should not state that an O-ring failed."
+    },
+    {
+        "question": "What emergency did the Apollo 13 crew report to Houston?",
+        "expected_answer": "At about 55 hours and 20 seconds into the mission, commander Jim Lovell told Houston, \"we've had a problem. We've had a MAIN B BUS UNDERVOLT.\" Fred Haise reported a pretty large bang with the caution and warning. Oxygen quantity 2 swung down around 20 to 60 percent and then went full-scale high. The crew also had a computer restart, a PGNCS light, and a restart reset."
+    },
+    {
+        "question": "What did Houston report about fuel cell 3 on Apollo 13?",
+        "expected_answer": "Houston saw a slight temperature fluctuation on fuel cell 3, from about 152 to 160 degrees over a 37-second period. The usual fluctuation was about 1.5 degrees. They said the same thing had been seen on earlier flights and that no one was worried. The crew also noticed the hydrogen and oxygen flows on fuel cell 3 were not exactly matched. Houston later said the flows matched on the ground and thought it was a spacecraft readout problem."
+    }
+]

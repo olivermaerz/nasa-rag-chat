@@ -1,0 +1,7 @@
+[theme]
+base = "dark"
+primaryColor = "#EE6611"
+backgroundColor = "#111100"
+secondaryBackgroundColor = "#222233"
+textColor = "#FAFAFA"
+font = "Electrolize:https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
